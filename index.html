@@ -33,17 +33,17 @@
         
         <!-- Black Header (Swiss Style) with Brand Image -->
         <header class="bg-black text-white p-8 relative flex items-center gap-4">
-            <!-- Logo Container with Optimized Error Handling -->
-            <div id="logo-container" class="bg-white p-1 rounded-none flex-shrink-0 w-16 h-16 flex items-center justify-center border-2 border-red-600 shadow-lg overflow-hidden">
+            <!-- Logo Container: Increased size to w-24 h-24 and removed padding -->
+            <div id="logo-container" class="bg-white p-0 rounded-none flex-shrink-0 w-24 h-24 flex items-center justify-center border-2 border-red-600 shadow-lg overflow-hidden">
                 <img src="Palmera.png" alt="Palmera Logo" class="w-full h-full object-contain" 
-                     onerror="const p=this.parentElement; p.className='bg-red-600 p-3 text-2xl flex items-center justify-center'; p.innerHTML='🌴';">
+                     onerror="const p=this.parentElement; p.className='bg-red-600 p-3 text-4xl flex items-center justify-center w-24 h-24'; p.innerHTML='🌴';">
             </div>
             
             <div>
-                <div class="absolute top-0 right-0 p-2 text-[10px] text-gray-500 font-mono uppercase">v2.6.2-FINAL</div>
-                <h1 class="text-2xl md:text-3xl font-bold tracking-tight mb-0 leading-none">PALMYRA</h1>
-                <p class="text-red-500 font-bold text-[10px] md:text-xs tracking-widest uppercase mt-1">حي بالميرا - امتداد التوسعات الشمالية</p>
-                <p class="text-gray-400 text-[9px] mt-1 italic">6th of October City</p>
+                <div class="absolute top-0 right-0 p-2 text-[10px] text-gray-500 font-mono uppercase">v2.6.3-EXPANDED</div>
+                <h1 class="text-2xl md:text-4xl font-bold tracking-tight mb-0 leading-none">PALMYRA</h1>
+                <p class="text-red-500 font-bold text-[10px] md:text-sm tracking-widest uppercase mt-2">حي بالميرا - امتداد التوسعات الشمالية</p>
+                <p class="text-gray-400 text-[10px] mt-1 italic font-mono">6th of October City</p>
             </div>
         </header>
 
@@ -53,7 +53,7 @@
                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
                 إخطار قانوني رسمي (Legal Notice)
             </h2>
-            <p class="text-sm text-red-900 leading-relaxed">
+            <p class="text-sm text-red-900 leading-relaxed text-right">
                 بموجب مسح الـ QR Code وتسجيل بياناتك، تقر بصفتك (مالك/عضو) في اتحاد شاغلي حي بالميرا بالعلم اليقيني بموعد ومكان انعقاد الجمعية العمومية لعام 2026. يعتبر انضمامك للمجموعة الرسمية إقراراً باستلام جدول الأعمال وكافة المرفقات قانوناً.
             </p>
         </section>
@@ -64,7 +64,7 @@
                 <div>
                     <label class="block text-xs font-bold text-gray-400 uppercase mb-2 tracking-widest text-right">الاسم بالكامل (طبقاً لعقد الملكية)</label>
                     <input type="text" id="userName" required 
-                        class="w-full bg-gray-50 border-b-2 border-gray-300 py-3 px-2 focus:border-black transition-all outline-none font-semibold"
+                        class="w-full bg-gray-50 border-b-2 border-gray-300 py-3 px-2 focus:border-black transition-all outline-none font-semibold text-right"
                         placeholder="أدخل اسمك الثلاثي">
                 </div>
 
@@ -72,13 +72,13 @@
                     <div>
                         <label class="block text-xs font-bold text-gray-400 uppercase mb-2 tracking-widest text-right">رقم الوحدة</label>
                         <input type="text" id="userUnit" required 
-                            class="w-full bg-gray-50 border-b-2 border-gray-300 py-3 px-2 focus:border-black transition-all outline-none font-semibold"
+                            class="w-full bg-gray-50 border-b-2 border-gray-300 py-3 px-2 focus:border-black transition-all outline-none font-semibold text-right"
                             placeholder="قطعة 45">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-gray-400 uppercase mb-2 tracking-widest text-right">رقم الموبايل</label>
                         <input type="tel" id="userPhone" required 
-                            class="w-full bg-gray-50 border-b-2 border-gray-300 py-3 px-2 focus:border-black transition-all outline-none font-semibold"
+                            class="w-full bg-gray-50 border-b-2 border-gray-300 py-3 px-2 focus:border-black transition-all outline-none font-semibold text-right"
                             placeholder="01xxxxxxxxx">
                     </div>
                 </div>
