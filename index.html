@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>البوابة الرقمية لحي بالميرا | أهداف المنصة</title>
-    <!-- Tailwind CSS for modern styling -->
+    <title>البوابة الرقمية لحي بالميرا | المعلومات والأهداف</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- IBM Plex Sans Arabic for professional typography -->
+    <!-- IBM Plex Sans Arabic -->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { 
@@ -20,19 +20,22 @@
         }
         @keyframes dots {
             0%, 20% { color: rgba(0,0,0,0); text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0); }
-            40% { color: #fff; text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0); }
-            60% { text-shadow: .25em 0 0 #fff, .5em 0 0 rgba(0,0,0,0); }
-            80%, 100% { text-shadow: .25em 0 0 #fff, .5em 0 0 #fff; }
+            40% { color: #000; text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0); }
+            60% { text-shadow: .25em 0 0 #000, .5em 0 0 rgba(0,0,0,0); }
+            80%, 100% { text-shadow: .25em 0 0 #000, .5em 0 0 #000; }
         }
+        #chatWindow::-webkit-scrollbar { width: 4px; }
+        #chatWindow::-webkit-scrollbar-track { background: #f1f1f1; }
+        #chatWindow::-webkit-scrollbar-thumb { background: #000; }
     </style>
 </head>
-<body class="antialiased text-gray-900 bg-slate-50 min-h-screen">
+<body class="antialiased text-gray-900 bg-zinc-100 min-h-screen">
 
     <!-- Main Container -->
     <div class="w-full max-w-2xl mx-auto bg-white shadow-2xl overflow-hidden border border-gray-100 my-0 md:my-10">
         
         <!-- Black Header Section -->
-        <header class="bg-black text-white p-10 relative flex flex-col items-center text-center">
+        <header class="bg-black text-white p-6 md:p-10 relative flex flex-col items-center text-center">
             <div id="logo-container" class="bg-white p-0 rounded-none flex-shrink-0 w-32 h-32 md:w-40 md:h-40 flex items-center justify-center border-4 border-red-600 shadow-2xl overflow-hidden mb-6">
                 <img src="Palmera.png" alt="Palmera Logo" class="w-full h-full object-contain" 
                      onerror="const p=this.parentElement; p.className='bg-red-600 p-3 text-6xl flex items-center justify-center w-32 h-32 md:w-40 md:h-40'; p.innerHTML='🌴';">
@@ -43,122 +46,134 @@
                 <p class="text-red-500 font-bold text-sm md:text-lg tracking-widest uppercase">Smart Assembly Portal 2026</p>
                 <div class="h-1 bg-red-600 w-24 mx-auto mt-4"></div>
             </div>
-            <div class="absolute top-0 right-0 p-3 text-[10px] text-gray-600 font-mono uppercase tracking-widest">v3.0.4-STABLE</div>
         </header>
 
+        <!-- About Palmera Section -->
+        <section class="p-6 md:p-12 bg-white text-right">
+            <h2 class="text-2xl md:text-3xl font-bold text-black mb-6 border-r-8 border-black pr-4 italic">عن حي بالميرا (Palmera)</h2>
+            <div class="space-y-4 text-gray-700 leading-relaxed text-sm md:text-base">
+                <p>
+                    يُعد حي <span class="font-bold text-black">بالميرا (Palmera)</span> أحد أرقى التجمعات السكنية في منطقة <span class="font-bold text-red-600">امتداد التوسعات الشمالية</span> بمدينة 6 أكتوبر. يتميز الحي بموقعه الاستراتيجي الذي يجمع بين الهدوء والخصوصية، وبين القرب من المحاور الحيوية والمناطق الخدمية الكبرى بالمدينة.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                    <div class="bg-zinc-50 p-4 border-l-4 border-red-600">
+                        <h4 class="font-bold text-black mb-1">الموقع الجغرافي</h4>
+                        <p class="text-xs text-gray-500">قلب التوسعات الشمالية، مدينة 6 أكتوبر، بالقرب من نادي الصيد ومول العرب.</p>
+                    </div>
+                    <div class="bg-zinc-50 p-4 border-l-4 border-black">
+                        <h4 class="font-bold text-black mb-1">طبيعة الحي</h4>
+                        <!-- Updated from villas to apartment buildings per request -->
+                        <p class="text-xs text-gray-500">منطقة عمارات ووحدات سكنية فاخرة تتميز بتصميمات معمارية عصرية ولاندسكيب متناسق.</p>
+                    </div>
+                    <div class="bg-zinc-50 p-4 border-l-4 border-red-600">
+                        <h4 class="font-bold text-black mb-1">الإدارة والاتحاد</h4>
+                        <p class="text-xs text-gray-500">يُدار الحي بواسطة اتحاد شاغلين منتخب يعمل على الحفاظ على القيمة العقارية والجمالية.</p>
+                    </div>
+                    <div class="bg-zinc-50 p-4 border-l-4 border-black">
+                        <h4 class="font-bold text-black mb-1">الرؤية المستقبلية</h4>
+                        <p class="text-xs text-gray-500">التحول إلى "حي ذكي" يعتمد على الحلول الرقمية في التواصل، الأمن، وإدارة الخدمات العامة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- The Purposes Section -->
-        <section class="p-8 md:p-12 bg-gray-50 border-b border-gray-200 text-right">
-            <h2 class="text-3xl font-bold text-black mb-8 border-r-8 border-red-600 pr-4">أهداف هذه المبادرة الرقمية</h2>
+        <section class="p-6 md:p-12 bg-gray-50 border-y border-gray-200 text-right">
+            <h2 class="text-2xl md:text-3xl font-bold text-black mb-8 border-r-8 border-red-600 pr-4 italic">أهداف المبادرة الرقمية</h2>
             
-            <div class="grid gap-8">
+            <div class="space-y-8">
                 <div class="flex gap-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl">01</div>
+                    <div class="flex-shrink-0 w-10 h-10 bg-black text-white flex items-center justify-center font-bold">01</div>
                     <div>
-                        <h3 class="font-bold text-lg mb-1">التوثيق القانوني</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">تفعيل خاصية "علم الوصول الرقمي" لضمان صحة انعقاد الجمعية العمومية قانوناً.</p>
+                        <h3 class="font-bold text-md mb-1">التوثيق القانوني</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">تفعيل خاصية "علم الوصول الرقمي" لضمان صحة انعقاد الجمعية العمومية قانوناً.</p>
                     </div>
                 </div>
 
                 <div class="flex gap-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl">02</div>
+                    <div class="flex-shrink-0 w-10 h-10 bg-black text-white flex items-center justify-center font-bold">02</div>
                     <div>
-                        <h3 class="font-bold text-lg mb-1">التحول الرقمي للحي</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">تيسير التواصل عبر استبدال المكاتبات الورقية بمنصة رقمية سريعة.</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl">03</div>
-                    <div>
-                        <h3 class="font-bold text-lg mb-1">تعزيز الشفافية والمشاركة</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">إتاحة جدول الأعمال وكافة تفاصيل الانعقاد بوضوح تام لجميع الملاك.</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-black text-white flex items-center justify-center font-bold text-xl">04</div>
-                    <div>
-                        <h3 class="font-bold text-lg mb-1">التواصل الذكي</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">دمج تقنيات الذكاء الاصطناعي (Gemini) للإجابة اللحظية على استفسارات السكان.</p>
+                        <h3 class="font-bold text-md mb-1">التحول الرقمي</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">استبدال المكاتبات الورقية التقليدية بمنصة تفاعلية سريعة وموثوقة.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Registration Form Section -->
-        <div id="register" class="px-8 pb-12 pt-4">
-            <h2 class="text-2xl font-bold mb-8 text-center text-gray-800 underline decoration-red-600 underline-offset-8">نموذج إقرار العلم والتسجيل</h2>
+        <div id="register" class="px-6 md:px-12 pb-12 pt-10">
+            <h2 class="text-xl md:text-2xl font-bold mb-8 text-center text-black border-b-4 border-red-600 inline-block pb-2 w-full">إقرار العلم والتسجيل</h2>
             <form id="residentForm" class="space-y-6">
                 <div>
-                    <label class="block text-xs font-bold text-gray-400 uppercase mb-2 tracking-widest text-right">الاسم بالكامل (طبقاً لعقد الملكية)</label>
+                    <label class="block text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-widest text-right">الاسم بالكامل</label>
                     <input type="text" id="userName" required 
-                        class="w-full bg-gray-50 border-b-2 border-gray-300 py-3 px-2 focus:border-black transition-all outline-none font-semibold text-right"
-                        placeholder="أدخل اسمك الثلاثي">
+                        class="w-full bg-zinc-50 border-b-2 border-gray-200 py-3 px-2 focus:border-red-600 transition-all outline-none font-semibold text-right"
+                        placeholder="أدخل اسمك كما في العقد">
                 </div>
 
-                <div class="grid grid-cols-2 gap-6">
+                <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-bold text-gray-400 uppercase mb-2 tracking-widest text-right">رقم الوحدة</label>
+                        <label class="block text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-widest text-right">رقم الوحدة</label>
                         <input type="text" id="userUnit" required 
-                            class="w-full bg-gray-50 border-b-2 border-gray-300 py-3 px-2 focus:border-black transition-all outline-none font-semibold text-right"
+                            class="w-full bg-zinc-50 border-b-2 border-gray-200 py-3 px-2 focus:border-red-600 transition-all outline-none font-semibold text-right"
                             placeholder="قطعة 45">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-gray-400 uppercase mb-2 tracking-widest text-right">رقم الموبايل</label>
+                        <label class="block text-[10px] font-bold text-gray-400 uppercase mb-2 tracking-widest text-right">رقم الموبايل</label>
                         <input type="tel" id="userPhone" required 
-                            class="w-full bg-gray-50 border-b-2 border-gray-300 py-3 px-2 focus:border-black transition-all outline-none font-semibold text-right"
+                            class="w-full bg-zinc-50 border-b-2 border-gray-200 py-3 px-2 focus:border-red-600 transition-all outline-none font-semibold text-right"
                             placeholder="01xxxxxxxxx">
                     </div>
                 </div>
 
-                <div class="flex items-start gap-3 bg-gray-50 p-4 border border-gray-200">
-                    <input type="checkbox" id="legalConsent" required 
-                        class="w-5 h-5 mt-1 border-gray-300 text-black focus:ring-black accent-black">
-                    <label for="legalConsent" class="text-sm font-semibold text-gray-700 leading-tight text-right">
-                        أوافق على الانضمام لجروب واتساب "بالميرا" الرسمي وأقر بالعلم بموعد الإنعقاد.
-                    </label>
-                </div>
-
                 <button type="submit" id="submitBtn" 
-                    class="w-full bg-black text-white font-bold py-5 px-4 hover:bg-zinc-800 transition-all flex justify-center items-center gap-2 group">
+                    class="w-full bg-black text-white font-bold py-5 px-4 hover:bg-zinc-800 transition-all flex justify-center items-center gap-2 group shadow-xl">
                     <span id="btnText">تأكيد العلم والإنضمام للواتساب</span>
-                    <svg id="successIcon" class="hidden w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                     <span class="group-hover:translate-x-[-4px] transition-transform">←</span>
                 </button>
             </form>
 
-            <!-- Gemini Section -->
-            <div class="mt-12 pt-8 border-t border-gray-200">
-                <div class="bg-blue-50 rounded-none p-6 border border-blue-100 shadow-sm">
-                    <h3 class="flex items-center gap-2 font-bold text-blue-900 mb-4 text-right">
-                        <span class="p-2 bg-blue-600 text-white rounded-none text-xs">AI</span>
-                        مساعد سكان بالميرا الذكي (Gemini)
-                    </h3>
-                    <div id="chatWindow" class="bg-white border border-blue-100 rounded-none h-40 overflow-y-auto p-4 mb-4 text-sm space-y-3 shadow-inner text-right">
-                        <p class="text-gray-400 italic text-[11px]">اسألني عن إجراءات التوكيل، موعد الاجتماع، أو جدول الأعمال..</p>
+            <!-- AI SECTION -->
+            <div class="mt-16">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="bg-red-600 text-white px-2 py-0.5 text-[10px] font-bold tracking-tighter">AI AGENT</span>
+                    <h3 class="font-bold text-black text-sm">مساعد بالميرا الذكي</h3>
+                </div>
+                
+                <div class="bg-zinc-50 border border-zinc-200 p-2 md:p-4 shadow-inner">
+                    <div id="chatWindow" class="bg-white border border-zinc-100 h-56 md:h-64 overflow-y-auto p-4 mb-3 text-xs md:text-sm space-y-4 text-right">
+                        <div class="text-zinc-400 italic text-[10px] mb-2 border-b border-zinc-50 pb-2">
+                            يمكنك السؤال عن (موعد الاجتماع، النصاب القانوني، التوكيلات، أهداف الجمعية)..
+                        </div>
                     </div>
-                    <div class="flex gap-2">
+                    
+                    <div class="flex flex-col md:flex-row gap-2">
                         <input type="text" id="aiInput" 
-                            class="flex-1 border border-blue-200 rounded-none px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none text-right" 
+                            class="flex-1 border border-zinc-300 rounded-none px-4 py-3 text-sm focus:ring-1 focus:ring-black outline-none text-right bg-white" 
                             placeholder="اكتب سؤالك هنا...">
-                        <button onclick="askGemini()" class="bg-blue-600 text-white px-6 py-2 rounded-none text-sm font-bold hover:bg-blue-700 transition">إرسال</button>
+                        <button onclick="askGemini()" class="bg-black text-white px-6 py-3 text-sm font-bold hover:bg-zinc-800 transition flex items-center justify-center gap-2">
+                            <span>إرسال</span>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                        </button>
                     </div>
                 </div>
+                <p class="text-[9px] text-zinc-400 mt-2 text-center uppercase tracking-widest font-mono">Powered by Gemini 3.0 Flash</p>
             </div>
         </div>
 
-        <footer class="bg-gray-100 p-8 text-center border-t border-gray-200">
-            <p class="text-[10px] text-gray-400 font-mono tracking-widest uppercase mb-4 text-center">
-                Palmera District Hub | 6th of October City | Egypt | 2026
+        <footer class="bg-zinc-900 p-8 text-center text-white">
+            <p class="text-[10px] font-mono tracking-widest uppercase mb-4 opacity-50">
+                Palmera District Hub | 6th of October City | 2026
             </p>
-            <div class="flex justify-center gap-8 text-[10px] font-bold text-gray-500">
-                <span class="border-b border-gray-300">التوسعات الشمالية</span>
-                <span class="border-b border-gray-300">مجلس الإدارة الرسمي</span>
+            <div class="flex justify-center gap-6 text-[10px] font-bold">
+                <span class="text-red-500 uppercase">التوسعات الشمالية</span>
+                <span class="text-zinc-400 uppercase">Official Union Portal</span>
             </div>
         </footer>
     </div>
 
     <script>
+        // Updated SCRIPT_URL as requested
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw6WZ6Qnpl73zUH_uGDezs3RulCDcR6yM23VVJGUGbcfCMMn1NGxzqTyPzPQntoKL00VA/exec';
         const WHATSAPP_LINK = 'https://chat.whatsapp.com/BJ1XdSiXcrkITAolNRGimq';
 
@@ -166,11 +181,8 @@
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
             const btnText = document.getElementById('btnText');
-            const successIcon = document.getElementById('successIcon');
-
             btn.disabled = true;
-            btnText.innerText = 'جاري التوثيق الرقمي...';
-            btn.classList.add('bg-zinc-600');
+            btnText.innerText = 'جاري الحفظ...';
 
             const payload = {
                 name: document.getElementById('userName').value,
@@ -180,27 +192,13 @@
             };
 
             try {
-                await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    cache: 'no-cache',
-                    body: JSON.stringify(payload)
-                });
-
-                btnText.innerText = 'تم التوثيق - جاري التحويل';
-                successIcon.classList.remove('hidden');
-                btn.classList.replace('bg-zinc-600', 'bg-green-600');
-
-                setTimeout(() => {
-                    window.location.href = WHATSAPP_LINK;
-                }, 1000);
-
+                await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(payload) });
+                btnText.innerText = 'تم التسجيل بنجاح';
+                setTimeout(() => window.location.href = WHATSAPP_LINK, 800);
             } catch (error) {
-                console.error('Submission Error:', error);
-                alert('حدث خطأ في الاتصال، يرجى المحاولة مرة أخرى');
                 btn.disabled = false;
-                btnText.innerText = 'تأكيد العلم والإنضمام للواتساب';
-                btn.classList.remove('bg-zinc-600');
+                btnText.innerText = 'تأكيد العلم والإنضمام';
+                console.error(error);
             }
         });
 
@@ -208,55 +206,34 @@
             const input = document.getElementById('aiInput');
             const chatWindow = document.getElementById('chatWindow');
             const question = input.value.trim();
-
             if (!question) return;
 
-            chatWindow.innerHTML += `<div class="text-left text-right"><span class="inline-block bg-blue-600 text-white rounded-none px-3 py-2 shadow-sm">أنت: ${question}</span></div>`;
+            chatWindow.innerHTML += `<div class="flex justify-start"><span class="bg-zinc-100 text-black px-3 py-2 text-right max-w-[85%] border-r-2 border-black">أنت: ${question}</span></div>`;
             input.value = '';
             chatWindow.scrollTop = chatWindow.scrollHeight;
 
-            const loadingId = 'ai-loading-' + Date.now();
-            chatWindow.innerHTML += `<div id="${loadingId}" class="text-right"><span class="inline-block bg-gray-100 rounded-none px-3 py-2 loading-dots text-gray-500 text-right">جاري التفكير</span></div>`;
+            const loadingId = 'loading-' + Date.now();
+            chatWindow.innerHTML += `<div id="${loadingId}" class="flex justify-end"><span class="bg-black text-white px-3 py-2 loading-dots">جاري التفكير</span></div>`;
 
             try {
                 const response = await fetch(`${SCRIPT_URL}?q=${encodeURIComponent(question)}`);
                 const data = await response.json();
-                
-                console.log("Full API Response:", data); // تفقد هذا في الـ Console لمعرفة المشكلة الحقيقية
+                document.getElementById(loadingId).remove();
 
-                // الحالة 1: وجود خطأ من جانب الـ Proxy (Apps Script)
-                if (data.error) {
-                    throw new Error("خطأ في الـ API: " + data.error);
-                }
-
-                // الحالة 2: الرد ناجح من Gemini
-                if (data.candidates && data.candidates[0] && data.candidates[0].content) {
+                if (data.candidates && data.candidates[0].content) {
                     const aiResponse = data.candidates[0].content.parts[0].text;
-                    document.getElementById(loadingId).remove();
-                    chatWindow.innerHTML += `<div class="text-right text-right"><span class="inline-block bg-gray-100 rounded-none px-3 py-2 text-gray-800 border border-gray-200 shadow-sm font-medium">🤖: ${aiResponse}</span></div>`;
-                } 
-                // الحالة 3: تم حجب الرد بواسطة مرشحات الأمان
-                else if (data.candidates && data.candidates[0].finishReason === "SAFETY") {
-                    throw new Error("تم حجب الرد لأسباب تتعلق بسياسات الأمان الخاصة بـ Google");
+                    chatWindow.innerHTML += `<div class="flex justify-end"><span class="bg-zinc-900 text-white px-3 py-2 text-right max-w-[85%] shadow-lg border-r-2 border-red-600">🤖: ${aiResponse}</span></div>`;
+                } else {
+                    throw new Error();
                 }
-                else {
-                    throw new Error("بنية الرد غير معروفة");
-                }
-                
-                chatWindow.scrollTop = chatWindow.scrollHeight;
-
             } catch (error) {
-                console.error('Detailed Error:', error);
                 if(document.getElementById(loadingId)) document.getElementById(loadingId).remove();
-                chatWindow.innerHTML += `<div class="text-right text-red-500 text-[10px] italic font-bold text-right">عذراً، ${error.message}</div>`;
+                chatWindow.innerHTML += `<div class="text-center text-red-600 text-[10px] font-bold py-2 border-t border-red-100">حدث خطأ في الاتصال، حاول مرة أخرى.</div>`;
             }
+            chatWindow.scrollTop = chatWindow.scrollHeight;
         }
 
-        document.getElementById('aiInput').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                askGemini();
-            }
-        });
+        document.getElementById('aiInput').addEventListener('keypress', (e) => { if(e.key === 'Enter') askGemini(); });
     </script>
 </body>
 </html>
