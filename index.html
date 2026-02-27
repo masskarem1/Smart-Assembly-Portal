@@ -33,14 +33,14 @@
         
         <!-- Black Header (Swiss Style) with Brand Image -->
         <header class="bg-black text-white p-8 relative flex items-center gap-4">
-            <!-- Updated Logo Container with Fixed Error Handling -->
-            <div class="bg-white p-1 rounded-none flex-shrink-0 w-16 h-16 flex items-center justify-center border-2 border-red-600 shadow-lg">
+            <!-- Logo Container with Optimized Error Handling -->
+            <div id="logo-container" class="bg-white p-1 rounded-none flex-shrink-0 w-16 h-16 flex items-center justify-center border-2 border-red-600 shadow-lg overflow-hidden">
                 <img src="Palmera.png" alt="Palmera Logo" class="w-full h-full object-contain" 
                      onerror="const p=this.parentElement; p.className='bg-red-600 p-3 text-2xl flex items-center justify-center'; p.innerHTML='🌴';">
             </div>
             
             <div>
-                <div class="absolute top-0 right-0 p-2 text-[10px] text-gray-500 font-mono uppercase">v2.6.1-FIXED</div>
+                <div class="absolute top-0 right-0 p-2 text-[10px] text-gray-500 font-mono uppercase">v2.6.2-FINAL</div>
                 <h1 class="text-2xl md:text-3xl font-bold tracking-tight mb-0 leading-none">PALMYRA</h1>
                 <p class="text-red-500 font-bold text-[10px] md:text-xs tracking-widest uppercase mt-1">حي بالميرا - امتداد التوسعات الشمالية</p>
                 <p class="text-gray-400 text-[9px] mt-1 italic">6th of October City</p>
@@ -62,7 +62,7 @@
         <div class="px-8 pb-8">
             <form id="residentForm" class="space-y-6">
                 <div>
-                    <label class="block text-xs font-bold text-gray-400 uppercase mb-2 tracking-widest">الاسم بالكامل (طبقاً لعقد الملكية)</label>
+                    <label class="block text-xs font-bold text-gray-400 uppercase mb-2 tracking-widest text-right">الاسم بالكامل (طبقاً لعقد الملكية)</label>
                     <input type="text" id="userName" required 
                         class="w-full bg-gray-50 border-b-2 border-gray-300 py-3 px-2 focus:border-black transition-all outline-none font-semibold"
                         placeholder="أدخل اسمك الثلاثي">
@@ -70,13 +70,13 @@
 
                 <div class="grid grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-xs font-bold text-gray-400 uppercase mb-2 tracking-widest">رقم الوحدة</label>
+                        <label class="block text-xs font-bold text-gray-400 uppercase mb-2 tracking-widest text-right">رقم الوحدة</label>
                         <input type="text" id="userUnit" required 
                             class="w-full bg-gray-50 border-b-2 border-gray-300 py-3 px-2 focus:border-black transition-all outline-none font-semibold"
                             placeholder="قطعة 45">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-gray-400 uppercase mb-2 tracking-widest">رقم الموبايل</label>
+                        <label class="block text-xs font-bold text-gray-400 uppercase mb-2 tracking-widest text-right">رقم الموبايل</label>
                         <input type="tel" id="userPhone" required 
                             class="w-full bg-gray-50 border-b-2 border-gray-300 py-3 px-2 focus:border-black transition-all outline-none font-semibold"
                             placeholder="01xxxxxxxxx">
@@ -86,7 +86,7 @@
                 <div class="flex items-start gap-3 bg-gray-50 p-4 border border-gray-200">
                     <input type="checkbox" id="legalConsent" required 
                         class="w-5 h-5 mt-1 border-gray-300 text-black focus:ring-black accent-black">
-                    <label for="legalConsent" class="text-sm font-semibold text-gray-700 leading-tight">
+                    <label for="legalConsent" class="text-sm font-semibold text-gray-700 leading-tight text-right">
                         أوافق على الانضمام لجروب واتساب "بالميرا" الرسمي وأقر بالعلم بموعد الإنعقاد.
                     </label>
                 </div>
@@ -101,16 +101,16 @@
 
             <div class="mt-12 pt-8 border-t border-gray-200">
                 <div class="bg-blue-50 rounded-xl p-6 border border-blue-100 shadow-sm">
-                    <h3 class="flex items-center gap-2 font-bold text-blue-900 mb-4">
+                    <h3 class="flex items-center gap-2 font-bold text-blue-900 mb-4 text-right">
                         <span class="p-2 bg-blue-600 text-white rounded-lg text-xs">AI</span>
                         مساعد سكان بالميرا الذكي (Gemini)
                     </h3>
                     <div id="chatWindow" class="bg-white border border-blue-100 rounded-lg h-48 overflow-y-auto p-4 mb-4 text-sm space-y-3 shadow-inner">
-                        <p class="text-gray-400 italic text-[11px]">اسأل عن موعد الاجتماع، مكان الانعقاد، أو كيفية عمل توكيل لأحد الجيران..</p>
+                        <p class="text-gray-400 italic text-[11px] text-right">اسأل عن موعد الاجتماع، مكان الانعقاد، أو كيفية عمل توكيل لأحد الجيران..</p>
                     </div>
                     <div class="flex gap-2">
                         <input type="text" id="aiInput" 
-                            class="flex-1 border border-blue-200 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none" 
+                            class="flex-1 border border-blue-200 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none text-right" 
                             placeholder="اكتب سؤالك هنا...">
                         <button onclick="askGemini()" class="bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-bold hover:bg-blue-700 transition shadow-md">إرسال</button>
                     </div>
@@ -177,7 +177,7 @@
 
             if (!question) return;
 
-            chatWindow.innerHTML += `<div class="text-left"><span class="inline-block bg-blue-600 text-white rounded-lg px-3 py-2 shadow-sm">أنت: ${question}</span></div>`;
+            chatWindow.innerHTML += `<div class="text-left"><span class="inline-block bg-blue-600 text-white rounded-lg px-3 py-2 shadow-sm text-right">أنت: ${question}</span></div>`;
             input.value = '';
             chatWindow.scrollTop = chatWindow.scrollHeight;
 
@@ -190,7 +190,7 @@
                 const aiResponse = data.candidates[0].content.parts[0].text;
 
                 document.getElementById(loadingId).remove();
-                chatWindow.innerHTML += `<div class="text-right"><span class="inline-block bg-gray-100 rounded-lg px-3 py-2 text-gray-800 border border-gray-200 shadow-sm">🤖: ${aiResponse}</span></div>`;
+                chatWindow.innerHTML += `<div class="text-right"><span class="inline-block bg-gray-100 rounded-lg px-3 py-2 text-gray-800 border border-gray-200 shadow-sm text-right font-medium">🤖: ${aiResponse}</span></div>`;
                 chatWindow.scrollTop = chatWindow.scrollHeight;
 
             } catch (error) {
