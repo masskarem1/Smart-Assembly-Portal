@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوستر الجمعية العمومية - حي بالميرا</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .a4-page {
+            width: 210mm;
+            height: 297mm;
+            background: white;
+            padding: 15mm;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #eee;
+        }
+        .swiss-line {
+            height: 10px;
+            background: #e11d48;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .qr-area {
+            width: 200px;
+            height: 200px;
+            border: 4px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px auto;
+            position: relative;
+            background: white;
+        }
+        .qr-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        @media print {
+            body { background: none; }
+            .a4-page { box-shadow: none; border: none; width: 100%; height: 100%; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-page">
+        <!-- Swiss Header Bar -->
+        <div class="swiss-line"></div>
+        
+        <!-- Header Section -->
+        <header class="flex justify-between items-start mb-10">
+            <div class="flex items-center gap-6">
+                <div class="bg-black p-3 border-2 border-red-600 w-28 h-28 flex items-center justify-center overflow-hidden">
+                    <img src="Palmera.png" alt="Logo" class="w-full h-full object-contain" 
+                         onerror="const p=this.parentElement; p.className='bg-red-600 p-3 flex items-center justify-center w-28 h-28 text-6xl'; p.innerHTML='🌴';">
+                </div>
+                <div class="text-right">
+                    <h1 class="text-5xl font-bold tracking-tighter text-black mb-1">PALMYRA</h1>
+                    <p class="text-red-600 font-bold text-lg tracking-widest uppercase">Smart Assembly Portal 2026</p>
+                    <p class="text-gray-400 text-xs mt-1 tracking-widest">إدارة التوسعات الشمالية - مدينة 6 أكتوبر</p>
+                </div>
+            </div>
+            <div class="text-left font-mono text-xs text-gray-400 uppercase">
+                REF: PLM-2026-NOTICE
+            </div>
+        </header>
+
+        <!-- Main Message -->
+        <main class="flex-grow text-center mt-6">
+            <h2 class="text-6xl font-bold text-black mb-8 leading-tight">إعلان هام لجميع جيراننا الكرام</h2>
+            <div class="h-1 bg-black w-32 mx-auto mb-10"></div>
+            
+            <p class="text-2xl text-gray-700 mb-12 leading-relaxed px-12 font-medium">
+                بصفتكم أعضاء في اتحاد شاغلي <span class="font-bold text-black underline">حي بالميرا</span>، صوتكم هو الركيزة الأساسية لتطوير خدمات حيّنا والحفاظ على ممتلكاتنا.
+            </p>
+
+            <div class="bg-red-50 p-10 border-r-8 border-red-600 mb-12 text-right shadow-sm">
+                <h3 class="text-2xl font-bold text-red-800 mb-6">لماذا يجب عليك مسح الكود والتسجيل؟</h3>
+                <ul class="space-y-5 text-xl text-red-900 list-disc list-inside">
+                    <li>تأكيد استلامك لموعد الجمعية العمومية رسمياً (إثبات علم الوصول).</li>
+                    <li>الانضمام لمجموعة الواتساب الرسمية لمتابعة قرارات الإدارة.</li>
+                    <li>الحصول على جدول الأعمال ونموذج التوكيلات القانونية.</li>
+                    <li>التفاعل مع المساعد الذكي للإجابة على استفساراتكم.</li>
+                </ul>
+            </div>
+
+            <!-- QR Code Area -->
+            <div class="mt-8">
+                <p class="text-xl font-bold mb-4 uppercase tracking-widest">امسح الكود أدناه للتسجيل والإنضمام فوراً</p>
+                <div class="qr-area">
+                    <!-- Real QR Code Image -->
+                    <img src="qr-code.png" alt="QR Code" onerror="this.parentElement.innerHTML='<p class=\'text-xs text-gray-400 p-4\'>تأكد من وجود ملف qr-code.png في المجلد الرئيسي</p>'">
+                    <!-- Logo in center (decoration) -->
+                    <div class="absolute w-10 h-10 bg-white p-1 border border-gray-200">
+                        <img src="Palmera.png" class="w-full h-full object-contain" onerror="this.style.display='none'">
+                    </div>
+                </div>
+                <p class="mt-4 text-sm text-gray-500 font-mono tracking-widest">https://mohamed-saad-must.github.io/Smart-Assembly-Portal/</p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-8 pt-8 border-t border-gray-200 text-center flex justify-between items-end">
+            <div class="text-right">
+                <p class="text-xs text-gray-400 uppercase tracking-tighter mb-1 font-bold">Location</p>
+                <p class="font-bold text-sm">حي بالميرا، مدينة 6 أكتوبر</p>
+            </div>
+            <div class="text-center">
+                 <p class="text-xs font-bold text-red-600 mb-1 uppercase tracking-widest italic border-b-2 border-red-600 pb-1">Legal Protocol Verified</p>
+            </div>
+            <div class="text-left">
+                <p class="text-xs text-gray-400 uppercase tracking-tighter mb-1 font-bold text-left">Union Board</p>
+                <p class="font-bold text-sm text-black">مجلس إدارة حي بالميرا</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Print Button -->
+    <div class="no-print fixed bottom-8 right-8">
+        <button onclick="window.print()" class="bg-black text-white px-10 py-4 rounded-full font-bold shadow-2xl hover:bg-gray-800 transition transform hover:scale-105 flex items-center gap-3">
+            <span class="text-xl">🖨️</span>
+            <span>طباعة البوستر الرسمي</span>
+        </button>
+    </div>
+
+</body>
+</html>
