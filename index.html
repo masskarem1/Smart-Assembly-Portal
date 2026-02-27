@@ -42,11 +42,11 @@
             </div>
             
             <div class="relative z-10">
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tighter mb-2">PALMYRA</h1>
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tighter mb-2">PALMERA</h1>
                 <p class="text-red-500 font-bold text-sm md:text-lg tracking-widest uppercase">Smart Assembly Portal 2026</p>
                 <div class="h-1 bg-red-600 w-24 mx-auto mt-4"></div>
             </div>
-            <div class="absolute top-0 right-0 p-3 text-[10px] text-gray-600 font-mono uppercase tracking-widest">v3.0.2-DEBUG</div>
+            <div class="absolute top-0 right-0 p-3 text-[10px] text-gray-600 font-mono uppercase tracking-widest">v3.0.3-UPDATED</div>
         </header>
 
         <!-- The Purposes Section (أهداف المنصة) -->
@@ -159,7 +159,7 @@
 
         <footer class="bg-gray-100 p-8 text-center border-t border-gray-200">
             <p class="text-[10px] text-gray-400 font-mono tracking-widest uppercase mb-4 text-center">
-                Palmyra District Hub | 6th of October City | Egypt | 2026
+                Palmera District Hub | 6th of October City | Egypt | 2026
             </p>
             <div class="flex justify-center gap-8 text-[10px] font-bold text-gray-500">
                 <span class="border-b border-gray-300">التوسعات الشمالية</span>
@@ -232,7 +232,6 @@
                 const response = await fetch(`${SCRIPT_URL}?q=${encodeURIComponent(question)}`);
                 const data = await response.json();
                 
-                // التأكد من أن الرد يحتوي على النتائج المتوقعة
                 if (data.candidates && data.candidates[0].content) {
                     const aiResponse = data.candidates[0].content.parts[0].text;
                     document.getElementById(loadingId).remove();
@@ -244,7 +243,7 @@
                 chatWindow.scrollTop = chatWindow.scrollHeight;
 
             } catch (error) {
-                console.error('Gemini Error:', error); // هذا سيظهر لك السبب الحقيقي في Console المتصفح
+                console.error('Gemini Error:', error);
                 if(document.getElementById(loadingId)) document.getElementById(loadingId).remove();
                 chatWindow.innerHTML += `<div class="text-right text-red-500 text-[10px] italic font-bold text-right">عذراً، المساعد مشغول حالياً. (تأكد من إعدادات النشر ومفتاح API)</div>`;
             }
